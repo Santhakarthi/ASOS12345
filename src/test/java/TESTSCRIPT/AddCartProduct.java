@@ -1,8 +1,10 @@
 package TESTSCRIPT;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import COM.ASSOS.GENERIC.BaseAppiumClass;
+import io.appium.java_client.AppiumBy;
 
 public class AddCartProduct extends BaseAppiumClass  {
 @Test
@@ -27,16 +29,20 @@ public class AddCartProduct extends BaseAppiumClass  {
 //        driver.findElement(AppiumBy.id("com.asos.app:id/dismiss_on_boarding_button")).click();
 //        driver.findElement(AppiumBy.id("android:id/button2")).click();
 	
-	hp.loginsetup(gutilis,"MODERN STAPLES");
+	      hp.loginsetup(gutilis,"MODERN STAPLES");
+	      pp.productPage(gutilis, "ASOS DESIGN relaxed pull on trouser in black with elasticated waist", "SIZE");
+	      acp.viewAddToCartPage();
 	
 	
+	
+
 	
 	
 //        driver.findElement(AppiumBy.androidUIAutomator ("new UiScrollable(new UiSelector()).scrollIntoView(text(\"MODERN STAPLES\"));"));
 //        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='MODERN STAPLES']")).click();
 	
 	
-	pp.productPage(gutilis, "ASOS DESIGN relaxed pull on trouser in black with elasticated waist", "SIZE");
+	
 //        driver.findElement(AppiumBy.androidUIAutomator ("new UiScrollable(new UiSelector()).scrollIntoView(text(\"ASOS DESIGN relaxed pull on trouser in black with elasticated waist\"));"));
 //        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='ASOS DESIGN relaxed pull on trouser in black with elasticated waist']")).click();
 //        driver.findElement(AppiumBy.androidUIAutomator ("new UiScrollable(new UiSelector()).scrollIntoView(text(\"SIZE\"));"));
@@ -44,20 +50,19 @@ public class AddCartProduct extends BaseAppiumClass  {
 //        driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='2XL - W40-42']")).click();
 	
 	
-	
-//        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='ADD TO BAG']")).click();
+	//        driver.findElement(AppiumBy.xpath("//android.widget.Button[@text='ADD TO BAG']")).click();
 //        driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='GOOGLE']")).click();
 //        driver.findElement(AppiumBy.xpath("(//android.view.View[@index='3'])[1]")).click();
 //        driver.findElement(AppiumBy.id("com.asos.app:id/bag_fab")).click();
+	      
+	      
+	      String actual=driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='ASOS DESIGN relaxed pull on trouser in black with elasticated waist']")).getText();
+	      String expected="ASOS DESIGN relaxed pull on trouser in black with elasticated waist";
+	      Assert.assertEquals(actual, expected, expected);
+	      
+	      
+	      
         
-        
-
-        
-        
-        
-        
-        
-
 	}
 	
 }
