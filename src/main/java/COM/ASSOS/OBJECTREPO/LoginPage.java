@@ -6,31 +6,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.generalstore.genericutility.GestureUtility;
+
 
 
 import io.appium.java_client.android.AndroidDriver;
 
 
+
 public class LoginPage {
 AndroidDriver driver;
-@FindBy(id="com.androidsample.generalstore:id/spinnerCountry")
-private WebElement countryDropDown;
-@FindBy(xpath="//android.widget.TextView[@text='India']")
-private WebElement SelectCountry;
-@FindBy(id="com.androidsample.generalstore:id/nameField")
-private WebElement  EnterNameField;
-@FindBy(id="com.androidsample.generalstore:id/radioMale")
-private WebElement  ClickRadioBtn;
-@FindBy(id="com.androidsample.generalstore:id/btnLetsShop")
-private WebElement  ClickOnLetsShopBtn;
+@FindBy(id="com.asos.app:id/splash_floor_men")
+private WebElement ClickOnMenButton;
 
+@FindBy(id="com.asos.app:id/dismiss_on_boarding_button")
+private WebElement OkButton;
 
-
-
-
-
-
+@FindBy(id="android:id/button2")
+private WebElement NOThanks;
 
 
 public LoginPage(AndroidDriver driver) {
@@ -38,47 +30,22 @@ public LoginPage(AndroidDriver driver) {
 	PageFactory.initElements(driver, this);
 }
 
-
-
-public WebElement getSelectCountry() {
-	return SelectCountry;
+public WebElement getClickOnMenButton() {
+	return ClickOnMenButton;
 }
 
-
-
-
-
-public WebElement getCountryDropDown() {
-	return countryDropDown;
+public WebElement getOkButton() {
+	return OkButton;
 }
 
-
-public WebElement getEnterNameField() {
-	return EnterNameField;
+public WebElement getNOThanks() {
+	return NOThanks;
 }
 
-
-
-public WebElement getClickRadioBtn() {
-	return ClickRadioBtn;
-}
-
-
-
-public WebElement getClickOnLetsShopBtn() {
-	return ClickOnLetsShopBtn;
-}
-
-
-
-public void loginsetup(String name,GestureUtility gutilis,String value) {
-	countryDropDown.click();
-	gutilis.scroll(value);
-	SelectCountry.click();
-	EnterNameField.sendKeys(name);
-	ClickRadioBtn.click();
-	ClickOnLetsShopBtn.click();
-	
+public void loginsetup() {
+	ClickOnMenButton.click();
+	OkButton.click();
+	NOThanks.click();
 }
 
 }

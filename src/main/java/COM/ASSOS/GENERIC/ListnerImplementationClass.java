@@ -2,15 +2,12 @@ package COM.ASSOS.GENERIC;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Driver;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-
 
 import io.appium.java_client.android.AndroidDriver;
 

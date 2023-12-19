@@ -12,10 +12,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import com.generalstore.objectrepo.LoginPage;
-import com.generalstore.objectrepo.ProductPage;
-import com.generalstore.objectrepo.cartPage;
-
+import COM.ASSOS.OBJECTREPO.AddCartPage;
+import COM.ASSOS.OBJECTREPO.HomePage;
+import COM.ASSOS.OBJECTREPO.LoginPage;
+import COM.ASSOS.OBJECTREPO.ProductPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -30,8 +30,10 @@ public class BaseAppiumClass {
 	public Fileutility futils=new Fileutility();
 	
 	public LoginPage  lp;
+	public HomePage   hp;
 	public ProductPage pp;
-	public cartPage   cp;
+	public AddCartPage acp;
+	
 	public static AndroidDriver sdriver;
 	
 	
@@ -66,8 +68,9 @@ public void openApplication() throws Throwable
 	 gutilis=new GestureUtility(driver);
 	
 	 lp=new LoginPage(driver);
+	 hp=new HomePage(driver);
 	 pp=new ProductPage(driver);
-     cp=new cartPage(driver); 
+	 acp=new AddCartPage(driver);
      
      
 }
@@ -75,7 +78,7 @@ public void openApplication() throws Throwable
 @BeforeMethod
 public void setLogin() {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-	lp.loginsetup("karthikeyan", gutilis, "India");
+	lp.loginsetup();
 }
 
 
