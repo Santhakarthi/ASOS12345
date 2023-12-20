@@ -23,7 +23,7 @@ public class AddProduct extends BaseAppiumClass{
 		pp.getClickOnSize();
 		pp.getClickOnAddToCart();
 		new AddCartPage(driver);
-		acp.getClickOnGoogle();
+		acp.viewAddToCartPage();
 //		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='NEW IN']")).click();
 //		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Clothing']")).click();
 //		driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='Jack & Jones tapered cuffed tech cargo in ice grey']")).click();
