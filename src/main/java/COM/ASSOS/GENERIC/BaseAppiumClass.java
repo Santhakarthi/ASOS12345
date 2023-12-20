@@ -41,9 +41,9 @@ public class BaseAppiumClass {
 	
 @BeforeSuite
 public void startServer() {
-	File f = new File("C:\\Users\\Karthikeyan V.H\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js");
-	 service = new AppiumServiceBuilder().withAppiumJS(f).withIPAddress("127.0.0.1").usingPort(4723).withTimeout(Duration.ofSeconds(300)).build();
-		
+	File f = new File(IConstantUtility.appiumServerPath);
+	 service = new AppiumServiceBuilder().withAppiumJS(f)
+	.withIPAddress(IConstantUtility.ipAddress).usingPort(IConstantUtility.port).withTimeout(Duration.ofSeconds(300)).build();
 	service.start();
 }
 @BeforeClass
@@ -77,7 +77,7 @@ public void openApplication() throws Throwable
 
 @BeforeMethod
 public void setLogin() {
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3000));
 	lp.loginsetup();
 }
 
@@ -85,14 +85,14 @@ public void setLogin() {
 @AfterClass
 
 public void closeApp() {
-	driver.quit();
+	//driver.quit();
 }
 
 
 
 @AfterSuite
 public void stopServer() {
-	service.stop();
+	//service.stop();
 }
 
 
