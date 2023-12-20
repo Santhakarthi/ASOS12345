@@ -16,6 +16,42 @@ public class HomePage {
 	@FindBy(xpath="//android.widget.TextView[@text='MODERN STAPLES']")
 	private WebElement  ClickOnModernStaples;
 	
+    @FindBy(xpath = "//android.widget.TextView[@text='NEW IN']")
+    private WebElement clickOnNewInLink;
+
+    @FindBy(xpath = "//android.widget.TextView[@text='Clothing']")
+    private WebElement clickOnClothing;
+
+
+
+
+
+
+	public AndroidDriver getDriver() {
+		return driver;
+	}
+
+
+
+
+
+
+
+
+	public WebElement getClickOnNewInLink() {
+		return clickOnNewInLink;
+	}
+
+
+
+
+
+
+
+
+	public WebElement getClickOnClothing() {
+		return clickOnClothing;
+	}
 
 
 

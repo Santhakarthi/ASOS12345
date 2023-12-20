@@ -24,6 +24,8 @@ public class ProductPage {
 	@FindBy(xpath="//android.widget.Button[@text='ADD TO BAG']")
 	private WebElement ClickOnAddToCart;
 	
+	@FindBy(xpath = "//android.widget.TextView[@text='Jack & Jones tapered cuffed tech cargo in ice grey']")
+	private WebElement selectProduct;
 	
 	
 	public ProductPage(AndroidDriver driver) {
@@ -47,6 +49,32 @@ public class ProductPage {
 
 
 	
+
+
+
+	public AndroidDriver getDriver() {
+		return driver;
+	}
+
+
+
+
+
+
+
+
+
+
+	public WebElement getSelectProduct() {
+		return selectProduct;
+	}
+
+
+
+
+
+
+
 
 
 
